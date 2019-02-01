@@ -1,0 +1,7 @@
+{
+  "exec": "node build",
+  "ext": "js,json",
+  "watch": [
+    "build"
+  ]
+}

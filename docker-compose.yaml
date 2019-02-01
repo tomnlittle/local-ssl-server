@@ -1,0 +1,54 @@
+version: '3.5'
+
+networks:
+  backend:
+    driver: bridge
+
+services:
+
+  api:
+    image: node:11-alpine
+    command: yarn start:watch
+    restart: on-failure
+    environment:
+      KEY_PATH: server.key
+      CERT_PATH: server.crt
+    labels:
+      namespace: ssl-server
+      tier: api
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - $PWD:/app
+    networks:
+      - backend
+
+  build:
+    image: node:11-alpine
+    command: yarn build:watch
+    restart: on-failure
+    labels:
+      namespace: ssl-server
+      tier: build
+    working_dir: /app
+    volumes:
+      - $PWD:/app
+    networks:
+      - backend
+
+  test:
+    image: node:11-alpine
+    command: yarn test:watch
+    restart: on-failure
+    environment:
+      TARGET_HOST: api
+      CA_CERT_PATH: root.pem
+    labels:
+      namespace: ssl-server
+      tier: test
+    working_dir: /app
+    volumes:
+      - $PWD:/app
+    networks:
+      - backend

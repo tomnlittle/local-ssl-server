@@ -1,0 +1,63 @@
+{
+  "extends": [
+    "tslint:latest"
+  ],
+  "rules": {
+    "array-bracket-spacing": [
+      true,
+      "never"
+    ],
+    "await-promise": [
+      true,
+      "Thenable"
+    ],
+    "curly": true,
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "max-line-length": [
+      false
+    ],
+    "no-angle-bracket-type-assertion": false,
+    "no-console": [
+      true,
+      "log"
+    ],
+    "no-default-export": true,
+    "no-implicit-dependencies": [
+      true,
+      "dev"
+    ],
+    "no-object-literal-type-assertion": [
+      false
+    ],
+    "no-submodule-imports": false,
+    "object-curly-spacing": [
+      true,
+      "always"
+    ],
+    "object-literal-key-quotes": [
+      true,
+      "consistent-as-needed"
+    ],
+    "object-literal-sort-keys": false,
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "return-undefined": false,
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "space-in-parens": [
+      true,
+      "never"
+    ],
+    "trailing-comma": [
+      false
+    ]
+  }
+}

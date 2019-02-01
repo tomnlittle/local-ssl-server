@@ -6,9 +6,9 @@ CA_FILENAME=${1:-root}
 
 echo _______________________________________________________
 echo
-echo GENERATING CERTIFICATE
+echo GENERATING SIGNING REQUEST
 echo
-# Generate a certificate key
+# Generate the certificate signing request
 openssl req \
   -new \
   -sha256 \
@@ -20,9 +20,9 @@ openssl req \
 
 echo _______________________________________________________
 echo
-echo GENERATING SIGNING REQUEST
+echo GENERATING CERTIFICATE
 echo
-# Generate the certificate signing request
+# Generate a certificate key
 openssl x509 \
   -req \
   -in "$CERT_FILENAME.csr" \

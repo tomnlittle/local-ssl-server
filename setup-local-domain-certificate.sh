@@ -1,8 +1,9 @@
-CERT_FILENAME=server
+CA_FILENAME=${1:-root}
+CERT_FILENAME=${2:-server}
+
 CERT_CONFIG=configuration/config.csr.cnf
 V3_CONFIG=configuration/v3.ext
 
-CA_FILENAME=${1:-root}
 
 echo _______________________________________________________
 echo
